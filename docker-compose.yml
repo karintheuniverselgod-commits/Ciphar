@@ -1,0 +1,10 @@
+services:
+  posterbot:
+    build: .
+    container_name: posterbot
+    restart: always
+    env_file: .env
+    environment:
+      DATA_DIR: /data
+    volumes:
+      - ./data:/data          # keeps the authorized users list after restarts/rebuilds
